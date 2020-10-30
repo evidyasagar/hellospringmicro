@@ -7,7 +7,7 @@ VOLUME /tmp
 
 EXPOSE 8080
 # add scripts to the container
-ADD target/helloworldspring.jar helloworldspring.jar
+ADD target/helloworld.jar helloworld.jar
 
 # install app runtimes and modules
 RUN bash -c 'touch /helloworldspring.jar'
