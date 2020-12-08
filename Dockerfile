@@ -3,6 +3,6 @@
 FROM openjdk:8
 
 EXPOSE 8080
-ADD target/hellospring.jar hellospring
+ADD target/hellospringboot.jar hellospringboot
 
-ENTRYPOINT ["java","-jar", "/hellospring"]
+ENTRYPOINT ["java","-jar", "/hellospringboot"]

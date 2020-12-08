@@ -1,6 +1,7 @@
 package com.example.helloworldspringboot;
 
 /*import jdk.nashorn.internal.runtime.logging.Logger;*/
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,8 @@ public class HelloworldSpringbootApplication
 	@GetMapping("/helloworld")
 	public String getMessage()
 	{
-		return "Hello Springboot World ....!!!";
+
+		return "Greetings from Springboot World ....!!!";
 	}
 	public static void main(String[] args)
 	{

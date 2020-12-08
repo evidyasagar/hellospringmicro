@@ -50,7 +50,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>hellospring</finalName>
+		<finalName>hellospringboot</finalName>
 	</build>
 
 	<repositories>
