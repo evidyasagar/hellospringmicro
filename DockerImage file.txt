@@ -1,0 +1,1 @@
+https://hub.docker.com/layers/selluru/hellospringboot/latest/images/sha256:afc351eb47ed6ca6bd4d0cfeb631c3e18c3640ef4fb51cf932418b34e7d71a0b
