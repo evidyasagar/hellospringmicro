@@ -5,6 +5,7 @@ package com.example.helloworldspringboot;
 import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 //@EnablePrometheusEndpoint
 // @Logger
+@EnableScheduling
 public class HelloworldSpringbootApplication
 {
 	//private static final Logger LOGGER=LoggerFactory.getLogger(HelloworldSpringbootApplication.class);
