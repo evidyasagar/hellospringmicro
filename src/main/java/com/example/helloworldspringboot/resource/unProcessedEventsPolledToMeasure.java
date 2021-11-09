@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.nio.file.FileStore;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,25 +40,16 @@ public class unProcessedEventsPolledToMeasure {
     public void logsfilesAvailable()
     {
         try {
-        logger.info("Before");
-       // Path path = Paths.get("C:\\Finastra Working Folder\\01. Prometheus-CustomMetrics\\hellospringmicro\\src\\main\\java\\com\\example\\Sample-Files");
+       Path folderPath = Paths.get("C:\\Finastra Working Folder\\01. Prometheus-CustomMetrics\\hellospringmicro\\src\\main\\java\\com\\example\\Sample-Files");
         //FileStore file;
-        File file1 = new File("C:\\Finastra Working Folder\\01. Prometheus-CustomMetrics\\hellospringmicro\\src\\main\\java\\com\\example\\Sample-Files");
-        FilenameFilter filter = new FilenameFilter() {
-            @Override
-            public boolean accept(File file1, String name) {
-                return name.endsWith(".xml");
-            }
-        };
-            logger.info("This is to count if files left in  polling folder");
-            File[] files = file1.listFiles(filter);
-        // Get the names of the files by using the .getName() method
-            for (int i = 0; i < files.length; i++) {
-                System.out.println(files[i].getName());
-            }
+            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(folderPath);
+            List<String> fileNames = new ArrayList<>();
+            for (Path path : directoryStream) {
+                fileNames.add(path.toString());
             counter.inc();
-
-        } catch (Exception e) {
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading files");
             e.printStackTrace();
 
         }
