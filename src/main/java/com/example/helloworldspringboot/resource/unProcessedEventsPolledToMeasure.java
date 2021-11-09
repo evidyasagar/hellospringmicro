@@ -40,15 +40,18 @@ public class unProcessedEventsPolledToMeasure {
     public void logsfilesAvailable()
     {
         try {
-       Path folderPath = Paths.get("C:\\Finastra Working Folder\\01. Prometheus-CustomMetrics\\hellospringmicro\\src\\main\\java\\com\\example\\Sample-Files");
+       //Path folderPath = Paths.get("C:\\Finastra Working Folder\\01. Prometheus-CustomMetrics\\hellospringmicro\\src\\main\\java\\com\\example\\Sample-Files");
         //FileStore file;
-            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(folderPath);
-            List<String> fileNames = new ArrayList<>();
-            for (Path path : directoryStream) {
-                fileNames.add(path.toString());
+           // DirectoryStream<Path> directoryStream = Files.newDirectoryStream(folderPath);
+            //List<String> fileNames = new ArrayList<>();
+            File file = new File("C:/Finastra Working Folder/01. Prometheus-CustomMetrics/hellospringmicro/src/main/java/com/example/Sample-Files/");
+            String[] fileArray=file.list();
+            for (String file1:fileArray) {
+                //fileNames.add(path.toString());
+                System.out.println(file1);
             counter.inc();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error reading files");
             e.printStackTrace();
 
